@@ -9,8 +9,8 @@ class Server {
     this.app = express();
     this.port = process.env.PORT;
 
-    // API users
-    this.usersRoutesPath = '/api/users';
+    // API articles
+    this.indexRoutesPath = '/api';
 
     // Connect to Database
     this.connectDB();
@@ -46,7 +46,7 @@ class Server {
 
   routes() {
     // Config Patch to route!!
-    this.app.use(this.usersRoutesPath, require('../routes/users.routes'));
+    this.app.use(this.indexRoutesPath, require('../routes/index.routes'));
   }
 
   listen() {
